@@ -1,17 +1,13 @@
 package com;
 
-public class West extends Direction{
-    public West(char direction) {
-        super(direction);
-    }
-
+public class West implements Orientation{
     @Override
     public Direction turnLeft() {
-        return new Direction('S');
+        return new Direction('S', new West());
     }
 
     @Override
     public Direction turnRight() {
-        return new Direction('N');
+        return new Direction('N', new West());
     }
 }

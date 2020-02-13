@@ -2,39 +2,23 @@ package com;
 
 public class Direction {
   private final char direction;
+  private Orientation orientation;
 
   public Direction(char direction) {
     this.direction = direction;
   }
 
+  public Direction(char direction, Orientation orientation) {
+    this.direction = direction;
+    this.orientation = orientation;
+  }
+
   public Direction turnRight() {
-    switch (direction) {
-      case 'N':
-        return new Direction('E');
-      case 'S':
-        return new Direction('W');
-      case 'E':
-        return new Direction('N');
-      case 'W':
-        return new Direction('S');
-      default:
-        throw new IllegalArgumentException();
-    }
+    return orientation.turnRight();
   }
 
   public Direction turnLeft() {
-    switch (direction) {
-      case 'N':
-        return new Direction('W');
-      case 'S':
-        return new Direction('E');
-      case 'E':
-        return new Direction('N');
-      case 'W':
-        return new Direction('S');
-      default:
-        throw new IllegalArgumentException();
-    }
+    return orientation.turnLeft();
   }
 
   @Override
