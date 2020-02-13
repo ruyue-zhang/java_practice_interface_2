@@ -4,10 +4,6 @@ public class Direction {
   private final char direction;
   private Orientation orientation;
 
-  public Direction(char direction) {
-    this.direction = direction;
-  }
-
   public Direction(char direction, Orientation orientation) {
     this.direction = direction;
     this.orientation = orientation;
